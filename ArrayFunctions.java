@@ -29,4 +29,25 @@ public class ArrayFunctions{
         display(eve);
 
     }
+    
+    public static int findSmallestDistanceIndex(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            throw new IllegalArgumentException("Array must have at least two elements.");
+        }
+    
+        int minIndex = 0;
+        int minDiff = (arr[1] > arr[0]) ? arr[1] - arr[0] : arr[0] - arr[1];
+    
+        for (int i = 1; i < arr.length - 1; i++) {
+            int diff = (arr[i + 1] > arr[i]) ? arr[i + 1] - arr[i] : arr[i] - arr[i + 1];
+            if (diff < minDiff) {
+                minDiff = diff;
+                minIndex = i;
+            }
+        }
+        return minIndex;
+        
+    }
 }
+    
+
