@@ -30,7 +30,7 @@ public class ArrayFunctions{
 
     }
     
-    public int findSmallestDistanceIndex(int[] arr) {
+    public void findSmallestDistanceIndex(int[] arr) {
         if (arr == null || arr.length < 2) {
             throw new IllegalArgumentException("Array must have at least two elements.");
         }
@@ -45,7 +45,7 @@ public class ArrayFunctions{
                 minIndex = i;
             }
         }
-        return minIndex;
+        System.out.println("Minimum Distance Index = "+minIndex);
         
     }
 }
